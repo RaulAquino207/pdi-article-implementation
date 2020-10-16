@@ -8,6 +8,7 @@ def meanSquareError(img1, img2):
     assert img1.shape == img2.shape, "Images must be the same shape."
     error = np.sum((img1.astype("float") - img2.astype("float")) ** 2)
     error = error/float(img1.shape[0] * img1.shape[1] * img1.shape[2])
+    print(error)
     return error
 
 def compareImages(img1, img2):
@@ -61,7 +62,7 @@ image_paths_negative = glob.glob(os.path.join(dataset_negative, '*.jpg'))
 # targetImage = imutils.resize(targetImage, width=500)
 # prototypeImg = cv2.imread(args["prototype"])
 
-targetImage = cv2.imread('dataset/negative/169.jpg')
+targetImage = cv2.imread('dataset/positive/37.JPG')
 targetImage = cv2.GaussianBlur(targetImage, (15, 15), 0)
 targetImage = imutils.resize(targetImage, width=500)
 prototypeImg = cv2.imread('stopPrototype.png')
